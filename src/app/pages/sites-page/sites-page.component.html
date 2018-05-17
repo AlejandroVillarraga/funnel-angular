@@ -1,0 +1,14 @@
+<div class="container">
+  <br>
+  <div class="row">
+
+    <div *ngFor="let ul of userslist" class="col-xs-6 col-xs-3">
+      <br>
+      <a (click)="saveSite(ul.companyName, ul.username)" routerLinkActive="/siteProfile" routerLink="/siteProfile"  class="btn btn1" role="button" aria-pressed="true">
+        <img src="{{ul.logo}}" width="190" height="190"><HR><p>{{ul.companyName}}</p><p>{{ul.companyAddres}}</p></a>
+    </div>
+
+  </div>
+  <a class="btnHref" routerLinkActive="/categorys" routerLink="/categorys"><img src="/assets/images/flechaatras.svg" width="30" height="30">      Categorías</a>
+
+</div>

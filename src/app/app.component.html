@@ -1,0 +1,77 @@
+<nav class="navbar navbar-toggleable-md  fixed-top ">
+
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="styleLogo" routerLinkActive="/categorys" routerLink="/categorys" ><img class="image" src="/assets/brand/logo.png" width="200" height="70"></a>
+
+
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+
+      <form [formGroup]="searchForm" (ngSubmit)="searchSite()" class="form-inline">
+
+
+        <div class="dropdown">
+
+          <span class="styleA"><img class="image" src="/assets/images/location.png" width="19" height="19">{{textTowns}}</span>
+          <div class="dropdown-content">
+            <a class="nav-link" (click)="searchTown(town.name)"  *ngFor="let town of townList">{{town.name}}</a>
+          </div>
+
+        </div>
+
+        &nbsp;
+        <div class="input-group">
+
+          <input type="text" class="form-control" formControlName="inputSearch" placeholder="Buscar" >
+          <button type="submit" class="btn btn-success" [disabled]="!searchForm.valid">Buscar</button>
+        </div>
+      </form>
+    </ul>
+  </div>
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+
+      <div class="dropdown">
+        <span class="styleA">Categorias</span>
+        <div class="dropdown-content">
+          <a class="nav-link" (click)="saveCategory(cl.name)" routerLinkActive="/sites" routerLink="/sites"  *ngFor="let cl of categoryList">{{cl.name}}</a>
+        </div>
+
+      </div>
+
+      <a  routerLinkActive="/contact" routerLink="/contact"  class="styleA" >¿Eres empresa?</a>
+      <li class="nav-item">
+        <a *ngIf="!isLoggedIn()" routerLinkActive="/signin" routerLink="/signin"  class="styleA" >Ingresa</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="!isLoggedIn()" routerLinkActive="/signup" routerLink="/signup"  class="styleA" >Resgistrate</a>
+      </li>
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a routerLinkActive="/categorys" routerLink="/categorys" class="styleA" (click)="signOut()">Salir</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<div id="mybutton">
+  <a target="_blank" href="https://www.facebook.com/FunnelCol/" class="fa fa-facebook"></a>
+  <br>
+  <a target="_blank" href="https://www.instagram.com/funnelcolombia/" class="fa fa-twitter"></a>
+  <br>
+  <a target="_blank" href="https://www.instagram.com/funnelcolombia/" class="fa fa-instagram"></a>
+</div>
+
+

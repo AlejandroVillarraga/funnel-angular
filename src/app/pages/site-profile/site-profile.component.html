@@ -1,0 +1,106 @@
+<div class="container">
+    <br>
+    <br>
+    <div class="row">
+    <div *ngFor="let c of listCoupons" class="col-xs-4">
+        <br>
+        <div class="card">
+            <img class="card-img-top" src="{{c.image}}" alt="Card image" style="width:100%">
+            <div class="card-img-overlay">
+
+                <img src="/assets/images/promo.svg" width="80" height="80">
+                <div class="descuento">
+                    <font size="5" color="white">{{c.discountRate}}%</font>
+                    de descuento
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="promo">
+
+                    <font size="2"><font size="2">antes: </font><del>${{c.lastPrice}}</del></font>
+                    <br>
+                    <font size="4"><font size="2">ahora: </font>${{c.newPrice}}</font>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{c.name}}</h4>
+                <p class="card-text">{{c.description}}</p>
+                <a (click)="saveCouponName(c.name)" class="btn btn-primary"><font color="white">Ver</font></a>
+                <br>
+                <font size="0">{{c.smallLetters}}</font>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="card" style="width:1050px">
+                <div class="row ">
+                    <div class="col-sm-4">
+                        <img class="card-img-top" src="{{currentUser.logo}}" alt="Card image" width="300" height="300">
+
+
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card-block px-3">
+                            <h4 class="card-title"><font size="6">{{currentUser.companyName}}</font></h4>
+                            <p class="card-text"><font size="2">Contacto: {{currentUser.cel1}} - {{currentUser.cel2}}</font></p>
+                            <p class="card-text"><font size="2">Dirección: {{currentUser.companyAddres}}</font></p>
+                            <p class="card-text"><font size="2">Correo: {{currentUser.email}}</font></p>
+                            <p class="card-text"><font size="2">Horario: {{currentUser.schedule}}</font></p>
+                            <p *ngIf="currentUser.tieneDomicilios" class="card-text">
+                                <font size="2">Tiene Domicilios</font>
+                            </p>
+                            <p *ngIf="currentUser.tieneDatafono" class="card-text">
+                                <font size="2">Tiene Datafono</font>
+                            </p>
+                            <p *ngIf="!currentUser.tieneDomicilios" class="card-text">
+                                <font size="2">No tiene Domicilios</font>
+                            </p>
+                            <p *ngIf="!currentUser.tieneDatafono" class="card-text">
+                                <font size="2">No tiene Datafono</font>
+                            </p>
+
+
+
+                            <a target="_blank" href="{{currentUser.linkFacebook}}" class="fa fa-facebook"></a>
+                            <a target="_blank" href="{{currentUser.linkInstagram}}" class="fa fa-instagram"></a>
+                            <a target="_blank" href="{{currentUser.linkTA}}" class="fa fa-tripadvisor"></a>
+                            <a target="_blank" href="{{currentUser.linkGoogleMaps}}" class="fa fa-map-marker"></a>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div  class="col-sm-4">
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

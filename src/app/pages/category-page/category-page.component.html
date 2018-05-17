@@ -1,0 +1,50 @@
+<div class="container">
+    <br>
+    <br>
+    <div>
+
+
+        <h2>En <img class="image" src="/assets/brand/logo.png" width="195" height="70"> podras conocer lo mejores lugares para realizar planes con tu familia y amigos ...</h2>
+
+    </div>
+    <font size="4" color="grey">Categorías:</font>
+    <div class="row">
+
+        <div *ngFor="let cl of categoryList" class="col-xs-6 col-xs-3">
+            <br>
+            <a (click)="saveCategory(cl.name)" routerLinkActive="/sites" routerLink="/sites"  class="btn btn1" role="button" aria-pressed="true">
+                <div class="card text-center">
+                    <img class="category" src="{{cl.image}}" width="100%" height="100%">
+                    <div class="card-img-overlay">
+                        <br>
+                        <br>
+                        {{cl.name}}
+                    </div>
+                </div>
+                </a>
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="card" style="width: 1000px">
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><font size="5">Nuestros Aliados</font></li>
+            <li class="list-group-item">
+                <div class="card-body">
+                    <div class="row" >
+                        <div *ngFor="let ul of userslist" class="col-xs-4">
+                            <img class="center" src="{{ul.logo}}" width="80" height="80">
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+
+</div>
+

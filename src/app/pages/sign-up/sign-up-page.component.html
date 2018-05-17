@@ -1,0 +1,39 @@
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="card" >
+    <h2>Registrate</h2>
+        <br>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()" novalidate>
+
+        <div class="form-group">
+            <label for="name">Nombre Completo</label>
+            <input type="text" class="form-control" id="name" formControlName="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" formControlName="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="celphone">Celular</label>
+            <input type="text" class="form-control" id="celphone" formControlName="celphone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Nombre de usario</label>
+            <input type="text" class="form-control" id="username" formControlName="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="priority">Contraseña</label>
+            <input type="password" class="form-control" id="alterEgo" formControlName="password" required>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!signUpForm.valid">Registrate</button>
+
+    </form>
+</div>
+</div>
