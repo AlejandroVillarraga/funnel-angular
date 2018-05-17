@@ -38,7 +38,5 @@ export class CategoryPageComponent implements OnInit {
     sessionStorage.setItem("categoryName", name);
   }
 
-
-
 }
 

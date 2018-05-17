@@ -28,6 +28,8 @@ import { SignInPageComponent } from './pages/sign-in/sign-in-page.component';
 
 import { SignUpPageComponent } from './pages/sign-up/sign-up-page.component';
 import { InformationPageComponent } from './pages/information-page/information-page.component';
+import { LoaderPageComponent } from './pages/loader-page/loader-page.component';
+
 
 import { CouponPageComponent } from './pages/coupon-page/coupon-page.component';
 
@@ -50,6 +52,7 @@ const ROUTES = [
 { path: 'contact', component: InformationPageComponent },
 { path: 'coupon', component: CouponPageComponent },
 {path: 'searchSite', component: SearchSitePageComponent},
+{path: 'loader', component: LoaderPageComponent},
 {path: '**', component: PageNotFoundComponent}
 ]
 
@@ -64,7 +67,8 @@ const ROUTES = [
     SignUpPageComponent,
     CouponPageComponent,
     InformationPageComponent,
-    SearchSitePageComponent
+    SearchSitePageComponent,
+    LoaderPageComponent
   ],
   imports: [
     NgxSlideshowModule.forRoot(),
@@ -78,7 +82,7 @@ const ROUTES = [
     {
       provide: INITIAL_CONFIG,
       useValue: {
-        apiURL: 'http://localhost:8080'
+        apiURL: 'https://funnelcol.herokuapp.com/'
       }
     },
     AppConfiguration,

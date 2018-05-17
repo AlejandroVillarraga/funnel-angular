@@ -58,8 +58,11 @@ constructor(
   }
 
   searchSite(siteName, townName): Observable<User[]> {
-
     return this.get(this.resourceUrl+"search/"+siteName+"/"+townName);
+  }
+
+  getPerson(username: string): Observable<Person[]> {
+    return this.get("person/getPerson/"+username);
   }
 
 

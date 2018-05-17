@@ -53,7 +53,7 @@
         <a *ngIf="!isLoggedIn()" routerLinkActive="/signin" routerLink="/signin"  class="styleA" >Ingresa</a>
       </li>
       <li class="nav-item">
-        <a *ngIf="!isLoggedIn()" routerLinkActive="/signup" routerLink="/signup"  class="styleA" >Resgistrate</a>
+        <a *ngIf="!isLoggedIn()" routerLinkActive="/signup" routerLink="/signup"  class="styleA" >Registrate</a>
       </li>
       <li *ngIf="isLoggedIn()" class="nav-item">
         <a routerLinkActive="/categorys" routerLink="/categorys" class="styleA" (click)="signOut()">Salir</a>

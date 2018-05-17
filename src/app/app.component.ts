@@ -71,20 +71,28 @@ export class AppComponent {
 
   signOut() {
     this.authService.signOut();
-    window.location.reload();
-    this.router.navigate(['/categorys']);
+    this.router.navigate(['/loader']);
+      var that = this;
+      setTimeout(function () {
+          that.router.navigate(['/categorys']);
+      }, 300);
   }
 
   searchSite() {
     var data = this.searchForm.get('inputSearch').value;
     sessionStorage.setItem("searchSite", data);
-    window.location.reload();
-    this.router.navigate(['/searchSite']);
+
+    this.router.navigate(['/loader']);
+      var that = this;
+      setTimeout(function () {
+          that.router.navigate(['/searchSite']);
+      }, 1000);
+
   }
 
   saveCategory(name: string){
-    window.location.reload();
     sessionStorage.setItem("categoryName", name);
+    this.router.navigate(['/sites']);
   }
 
 }

@@ -24,12 +24,14 @@ export class SignInPageComponent implements OnInit {
   }
 
   doLogin() {
+    this.router.navigate(['loader']);
     this.usersService.login(
       this.signInForm.get('username').value,
       this.signInForm.get('password').value).subscribe(loginResponse => {
         this.router.navigate(['categorys']);
-        window.location.reload();
       }, error => {
+
+        this.router.navigate(['signin']);
         this.loginError = 'Vuelve a intentarlo' ;
       })
 
