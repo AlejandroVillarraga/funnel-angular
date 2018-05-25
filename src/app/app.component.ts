@@ -28,9 +28,8 @@ export class AppComponent {
     public router: Router
   ) {
     window.scroll(0,0)
-    if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/categorys']);
-    }
+
 
     this.searchForm = new FormGroup({
         inputSearch: new FormControl()
@@ -38,6 +37,8 @@ export class AppComponent {
 
      this.townService.getTowns().subscribe(townsResponse=>{
        this.townList = townsResponse;
+      document.getElementById("loader2").remove();
+
     })
 
 
@@ -53,6 +54,7 @@ export class AppComponent {
 
     this.categoryService.getCategorys().subscribe(cateResponse=>{
        this.categoryList = cateResponse;
+      document.getElementById("loader").remove();
     })
 
 
@@ -75,7 +77,7 @@ export class AppComponent {
       var that = this;
       setTimeout(function () {
           that.router.navigate(['/categorys']);
-      }, 300);
+      }, 10);
   }
 
   searchSite() {
@@ -86,7 +88,7 @@ export class AppComponent {
       var that = this;
       setTimeout(function () {
           that.router.navigate(['/searchSite']);
-      }, 1000);
+      }, 10);
 
   }
 

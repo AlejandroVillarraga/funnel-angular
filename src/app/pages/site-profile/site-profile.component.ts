@@ -3,6 +3,7 @@ import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 import { Coupon } from '../../models/coupon';
 import { Router } from '@angular/router';
+import { AuthService } from '../../common/auth.service';
 
 @Component({
   selector: 'app-site-profile',
@@ -16,7 +17,9 @@ export class SiteProfileComponent implements OnInit {
 
 
 
-  constructor(public usersService: UsersService, public router: Router) { }
+  constructor(public usersService: UsersService,
+              public authService: AuthService,
+              public router: Router) { }
 
   ngOnInit() {
         window.scroll(0,0)
@@ -30,13 +33,24 @@ export class SiteProfileComponent implements OnInit {
     this.usersService.getCouponsByUsernameSite(data1).subscribe(usersResponse=>{
         console.log(usersResponse);
        this.listCoupons = usersResponse;
+      document.getElementById("loader").remove();
+
     })
 
   }
 
   saveCouponName(name: string){
-    this.router.navigate(['coupon']);
+    if(this.isLoggedIn()){
+        this.router.navigate(['coupon']);
+    }
+    else{
+        this.router.navigate(['signin']);
+    }
     sessionStorage.setItem("couponName", name);
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
   }
 
 

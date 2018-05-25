@@ -14,8 +14,9 @@ export class CouponPageComponent implements OnInit {
   @ViewChild('content') content: ElementRef;
   private currentCoupon: Coupon;
 
-  public downloadPdf(){
-    let doc = new jsPDF();
+  public downloadPdf(companyLogo: string){
+    console.log(companyLogo);
+    let doc = new jsPDF('l', 'mm','a5');
 
     let specialElementHandlers = {
         '#editor': function(element, renderer){
@@ -26,14 +27,18 @@ export class CouponPageComponent implements OnInit {
     let content = this.content.nativeElement;
 
     var img = new Image;
-    img.crossOrigin = "";  // for demo as we are at different origin than image
     img.src = "/assets/brand/logo.png";
-    doc.addImage(img,10, 10, 50, 25);
+    doc.addImage(img,10, 10, 50, 20);
 
-    doc.fromHTML(content.innerHTML, 15, 40, {
+    var logo = new Image;
+    logo.src = companyLogo;
+    doc.addImage(logo,10, 30, 40, 40);
+
+    doc.fromHTML(content.innerHTML, 5, 50, {
         'width': 190,
         'elementHandlers': specialElementHandlers
     });
+
 
     doc.save('cupon.pdf');
 
@@ -51,6 +56,7 @@ export class CouponPageComponent implements OnInit {
     this.usersService.getCoupon(data, data1).subscribe(usersResponse=>{
         console.log(usersResponse);
        this.currentCoupon = usersResponse;
+      document.getElementById("loader").remove();
     })
   }
 

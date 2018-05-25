@@ -1,14 +1,13 @@
 <br>
 <br>
-
+<img class="category" src="{{currentCoupon.site.logo}}" width="200px" height="200px">
+<div style=" margin: 0 auto;" id="loader" class="loader"></div>
 <div id="content"  #content>
-
-    <font size="16px">{{currentCoupon.name}}</font><br>
-    <font size="2px">Anterior precio: <del>{{currentCoupon.lastPrice}}</del></font><br>
-    <font size="5px">Precio actual: {{currentCoupon.newPrice}}</font><br>
-    <font size="4">Descrpción: {{currentCoupon.description}}</font><br>
-    <font size="4">Code: {{currentCoupon.code}}</font><br>
+    <font size="10px">{{currentCoupon.name}}</font><br>
+    <font size="2px">Anterior precio: $<del>{{currentCoupon.lastPrice}}</del></font><br>
+    <font size="5px">Precio actual: ${{currentCoupon.newPrice}}</font><br>
+    <font size="4">Descripción: {{currentCoupon.description}}</font><br>
+    <font size="6">Code: {{currentCoupon.code}}</font><br>
     <font size="0">{{currentCoupon.smallLetters}}</font><br>
-
 </div>
-<a (click)="downloadPdf()" class="btn btn-primary">Descargar</a>
+<a (click)="downloadPdf(currentCoupon.site.logo)" class="btn btn-primary">Descargar</a>

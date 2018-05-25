@@ -22,6 +22,7 @@ export class SearchSitePageComponent implements OnInit {
     var dataTown = sessionStorage.getItem("searchTown");
     this.usersService.searchSite(data, dataTown).subscribe(usersResponse=>{
        this.userslist = usersResponse;
+      document.getElementById("loader").remove();
         if(this.userslist.length==0){
             this.errorText = "Lo sentimos !!!! No se encontro nada relacionado con "+data;
         }

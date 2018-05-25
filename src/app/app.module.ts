@@ -82,7 +82,7 @@ const ROUTES = [
     {
       provide: INITIAL_CONFIG,
       useValue: {
-        apiURL: 'https://funnelcol.herokuapp.com/'
+        apiURL: 'http://localhost:8080'
       }
     },
     AppConfiguration,

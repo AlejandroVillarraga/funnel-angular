@@ -21,6 +21,7 @@ export class SitesPageComponent implements OnInit {
     var data = sessionStorage.getItem("categoryName");
     this.usersService.getSitesByCategory(data).subscribe(usersResponse=>{
        this.userslist = usersResponse;
+      document.getElementById("loader").remove();
     })
   }
 

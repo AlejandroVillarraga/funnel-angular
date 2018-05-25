@@ -24,11 +24,13 @@ export class CategoryPageComponent implements OnInit {
     window.scroll(0,0)
     this.categoryService.getCategorys().subscribe(cateResponse=>{
        this.categoryList = cateResponse;
+      document.getElementById("loader").remove();
     })
 
 
     this.usersService.getSites().subscribe(usersResponse=>{
        this.userslist = usersResponse;
+      document.getElementById("loader2").remove();
     })
   }
 

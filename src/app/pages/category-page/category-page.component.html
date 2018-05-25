@@ -8,6 +8,7 @@
 
     </div>
     <font size="4" color="grey">Categorías:</font>
+    <div style=" margin: 0 auto;" id="loader" class="loader"></div>
     <div class="row">
 
         <div *ngFor="let cl of categoryList" class="col-xs-6 col-xs-3">
@@ -28,12 +29,13 @@
     <br>
     <br>
     <div class="card" style="width: 1000px">
-
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><font size="5">Nuestros Aliados</font></li>
             <li class="list-group-item">
                 <div class="card-body">
                     <div class="row" >
+
+                        <div style=" margin: 0 auto;" id="loader2" class="loader"></div>
                         <div *ngFor="let ul of userslist" class="col-xs-4">
                             <img class="center" src="{{ul.logo}}" width="80" height="80">
                         </div>
