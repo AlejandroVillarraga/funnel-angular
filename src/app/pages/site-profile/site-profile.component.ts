@@ -25,7 +25,6 @@ export class SiteProfileComponent implements OnInit {
         window.scroll(0,0)
     var data = sessionStorage.getItem("siteName");
     this.usersService.getSite(data).subscribe(usersResponse=>{
-       console.log(usersResponse);
        this.currentUser = usersResponse;
     })
 

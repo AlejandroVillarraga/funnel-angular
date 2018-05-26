@@ -56,7 +56,7 @@
                             <h4 class="card-title"><font size="9">{{currentUser.companyName}}</font></h4>
                             <p class="card-text"><font size="3">{{currentUser.descripcion}}</font></p>
                             <p class="card-text"><img class="image" src="/assets/images/cel.svg" width="25" height="25"><font size="3" color="grey"> Contacto: </font><font size="4">{{currentUser.cel1}} - {{currentUser.cel2}}</font></p>
-                            <p class="card-text"><img class="image" src="/assets/images/location.svg" width="25" height="25"><font size="3" color="grey"> Dirección: </font><font size="4">{{currentUser.companyAddres}}</font></p>
+                            <p class="card-text"><img class="image" src="/assets/images/location.svg" width="25" height="25"><font size="3" color="grey"> Dirección: </font><font size="4">{{currentUser.companyAddres}} - {{currentUser.town.name}}</font></p>
                             <p class="card-text"><img class="image" src="/assets/images/email.svg" width="25" height="25"><font size="3" color="grey"> Correo: </font><font size="4">{{currentUser.email}}</font></p>
                             <p class="card-text"><img class="image" src="/assets/images/calendar.svg" width="25" height="25"><font size="3" color="grey"> Horario: </font><font size="4">{{currentUser.schedule}}</font></p>
                             <p *ngIf="currentUser.tieneDomicilios" class="card-text">
