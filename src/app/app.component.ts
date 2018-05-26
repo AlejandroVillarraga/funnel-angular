@@ -94,7 +94,11 @@ export class AppComponent {
 
   saveCategory(name: string){
     sessionStorage.setItem("categoryName", name);
-    this.router.navigate(['/sites']);
+    this.router.navigate(['/loader']);
+      var that = this;
+      setTimeout(function () {
+          that.router.navigate(['/sites']);
+      }, 10);
   }
 
 }
