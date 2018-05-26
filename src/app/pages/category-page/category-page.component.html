@@ -4,7 +4,7 @@
     <div>
 
 
-        <h2>En <img class="image" src="/assets/brand/logo.png" width="195" height="70"> podras conocer lo mejores lugares para realizar planes con tu familia y amigos ...</h2>
+        <h2>En <img class="image" src="/assets/brand/logo.png" width="195" height="70"> podras encontrar lo mejores lugares para realizar planes con tu familia y amigos ...</h2>
 
     </div>
     <font size="4" color="grey">Categorías:</font>
@@ -19,7 +19,8 @@
                     <div class="card-img-overlay">
                         <br>
                         <br>
-                        {{cl.name}}
+                        <B>
+                            {{cl.name}}</B>
                     </div>
                 </div>
                 </a>
@@ -38,6 +39,12 @@
                         <div style=" margin: 0 auto;" id="loader2" class="loader"></div>
                         <div *ngFor="let ul of userslist" class="col-xs-4">
                             <img class="center" src="{{ul.logo}}" width="80" height="80">
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
                         </div>
 
                     </div>

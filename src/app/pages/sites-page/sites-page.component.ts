@@ -10,6 +10,7 @@ import { User } from '../../models/user';
 export class SitesPageComponent implements OnInit {
 
   private userslist: User[] = [];
+  private errorText: string;
 
   constructor(public usersService: UsersService){
 
@@ -22,6 +23,12 @@ export class SitesPageComponent implements OnInit {
     this.usersService.getSitesByCategory(data).subscribe(usersResponse=>{
        this.userslist = usersResponse;
       document.getElementById("loader").remove();
+        if(this.userslist.length==0){
+            this.errorText = "Lo sentimos !!!! No encontramos lugares registrados en la categoria "+data;
+        }
+        else{
+            this.errorText = "";
+        }
     })
   }
 

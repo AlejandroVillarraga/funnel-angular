@@ -51,28 +51,35 @@
 
 
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-8">
                         <div class="card-block px-3">
-                            <h4 class="card-title"><font size="6">{{currentUser.companyName}}</font></h4>
-                            <p class="card-text"><font size="2">Contacto: {{currentUser.cel1}} - {{currentUser.cel2}}</font></p>
-                            <p class="card-text"><font size="2">Dirección: {{currentUser.companyAddres}}</font></p>
-                            <p class="card-text"><font size="2">Correo: {{currentUser.email}}</font></p>
-                            <p class="card-text"><font size="2">Horario: {{currentUser.schedule}}</font></p>
+                            <h4 class="card-title"><font size="9">{{currentUser.companyName}}</font></h4>
+                            <p class="card-text"><font size="3">{{currentUser.descripcion}}</font></p>
+                            <p class="card-text"><img class="image" src="/assets/images/cel.svg" width="25" height="25"><font size="3" color="grey"> Contacto: </font><font size="4">{{currentUser.cel1}} - {{currentUser.cel2}}</font></p>
+                            <p class="card-text"><img class="image" src="/assets/images/location.svg" width="25" height="25"><font size="3" color="grey"> Dirección: </font><font size="4">{{currentUser.companyAddres}}</font></p>
+                            <p class="card-text"><img class="image" src="/assets/images/email.svg" width="25" height="25"><font size="3" color="grey"> Correo: </font><font size="4">{{currentUser.email}}</font></p>
+                            <p class="card-text"><img class="image" src="/assets/images/calendar.svg" width="25" height="25"><font size="3" color="grey"> Horario: </font><font size="4">{{currentUser.schedule}}</font></p>
                             <p *ngIf="currentUser.tieneDomicilios" class="card-text">
-                                <font size="2">Tiene Domicilios</font>
+                                <img class="image" src="/assets/images/domicilio.png" width="35" height="35">
+                                <font size="3"> Si realiza Domicilios </font>
+                                <img class="image" src="/assets/images/check.png" width="20" height="20">
                             </p>
                             <p *ngIf="currentUser.tieneDatafono" class="card-text">
-                                <font size="2">Tiene Datafono</font>
+                                <img class="image" src="/assets/images/dataphone.svg" width="35" height="35">
+                                <font size="3"> Si tiene Datafono </font>
+                                <img class="image" src="/assets/images/check.png" width="20" height="20">
                             </p>
                             <p *ngIf="!currentUser.tieneDomicilios" class="card-text">
-                                <font size="2">No tiene Domicilios</font>
+                                <font size="3" color="red"> No realiza Domicilios </font>
+                                <img class="image" src="/assets/images/error.svg" width="20" height="20">
                             </p>
                             <p *ngIf="!currentUser.tieneDatafono" class="card-text">
-                                <font size="2">No tiene Datafono</font>
+                                <font size="3" color="red"> No tiene Datafono </font>
+                                <img class="image" src="/assets/images/error.svg" width="20" height="20">
                             </p>
 
 
-
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=57{{currentUser.cel1}}" class="fa fa-whatsapp"></a>
                             <a target="_blank" href="{{currentUser.linkFacebook}}" class="fa fa-facebook"></a>
                             <a target="_blank" href="{{currentUser.linkInstagram}}" class="fa fa-instagram"></a>
                             <a target="_blank" href="{{currentUser.linkTA}}" class="fa fa-tripadvisor"></a>
@@ -84,9 +91,7 @@
 
                     </div>
 
-                    <div  class="col-sm-4">
 
-                    </div>
                 </div>
 
 

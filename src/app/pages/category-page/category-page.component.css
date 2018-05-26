@@ -33,7 +33,7 @@
 
 
 .btn:hover {
-    color: black;
+    color: #0e6ebe;
     font-size: 30px;
 
 }
@@ -56,6 +56,6 @@
 .category:hover {
  -webkit-transition-duration: 1s; /* Safari */
     transition-duration: 1s;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
