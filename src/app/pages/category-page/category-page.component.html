@@ -1,6 +1,38 @@
 <div class="container">
     <br>
     <br>
+    <div class="row">
+
+
+        <form [formGroup]="searchForm" (ngSubmit)="searchSite()" class="form-inline">
+
+            &nbsp;
+            <div class="input-group">
+                <input type="text" class="form-control" formControlName="inputSearch" placeholder="Buscar" >
+                <button type="submit" class="btn-success" [disabled]="!searchForm.valid">Buscar</button>
+            </div>
+        </form>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="dropdown">
+
+            <span class="styleA"><img class="image" src="/assets/images/location.svg" width="19" height="19">
+                {{textTowns}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img class="image" src="/assets/images/down.svg" width="19" height="19"></span>
+            <div class="dropdown-content">
+                <div style=" margin: 0 auto;" id="loader3" class="loader"></div>
+                <a class="nav-link" (click)="searchTown(town.name)"  *ngFor="let town of townList">{{town.name}}</a>
+            </div>
+
+        </div>
+
+
+<hr>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
     <div>
 
 

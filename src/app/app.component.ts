@@ -37,7 +37,6 @@ export class AppComponent {
 
      this.townService.getTowns().subscribe(townsResponse=>{
        this.townList = townsResponse;
-      document.getElementById("loader2").remove();
 
     })
 
