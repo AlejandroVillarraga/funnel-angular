@@ -27,15 +27,14 @@
 }
 
 .btn:hover {
-    background-color: #cf7b04;
+    background-color: #0e6ebe;
     color: white;
 }
 
 .btnHref{
-        background: #cf7b04;
         width: 130px;
         height: 40px;
-    color: #cf7b04;
+    color: #0e6ebe;
     padding: 5px 5px;
     text-align: center;
     text-decoration: none;
@@ -47,12 +46,12 @@
     cursor: pointer;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         background-color: white;
-        border: 2px solid #cf7b04;
+        border: 2px solid #0e6ebe;
         margin: 0 auto;
 }
 
 .btnHref:hover {
-    background-color: #cf7b04;
+    background-color: #0e6ebe;
     color: white;
 }
 

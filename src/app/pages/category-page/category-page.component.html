@@ -47,12 +47,11 @@
             <br>
             <a (click)="saveCategory(cl.name)" routerLinkActive="/sites" routerLink="/sites"  class="btn btn1" role="button" aria-pressed="true">
                 <div class="card text-center">
-                    <img class="category" src="{{cl.image}}" width="100%" height="100%">
+                    <img class="category" src="{{cl.image}}" width="248px" height="148px">
                     <div class="card-img-overlay">
                         <br>
                         <br>
-                        <B>
-                            {{cl.name}}</B>
+                        <B>{{cl.name}}</B>
                     </div>
                 </div>
                 </a>
@@ -86,6 +85,18 @@
 
 
     </div>
+    <hr>
+    <a routerLinkActive="/categorys" routerLink="/categorys" >Categorias</a><br>
+    <a routerLinkActive="/contact" routerLink="/contact" >¿Eres empresa?</a><br>
+    <div *ngIf="!isLoggedIn()">
+        <a routerLinkActive="/signin" routerLink="/signin" >Ingresa</a><br>
+        <a  routerLinkActive="/signup" routerLink="/signup" >Registrate</a><br>
+    </div>
+    <div *ngIf="isLoggedIn()" >
+        <a routerLinkActive="/categorys" routerLink="/categorys" (click)="signOut()">Salir</a>
+    </div>
+    <hr>
+
 
 </div>
 <br>

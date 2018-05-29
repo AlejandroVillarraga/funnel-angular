@@ -6,6 +6,7 @@ import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 import { TownService } from '../../services/town.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { AuthService } from '../../common/auth.service';
 import { Town } from '../../models/town';
 
 @Component({
@@ -22,7 +23,9 @@ export class CategoryPageComponent implements OnInit {
   public searchForm: FormGroup;
   private textTowns:string;
 
-  constructor(public categoryService: CategoryService, public usersService: UsersService,
+  constructor(public categoryService: CategoryService,
+              public authService: AuthService,
+              public usersService: UsersService,
               public townService: TownService,
                 public router: Router){
 
@@ -61,6 +64,9 @@ export class CategoryPageComponent implements OnInit {
        this.userslist = usersResponse;
       document.getElementById("loader2").remove();
     })
+
+
+
   }
 
 
@@ -82,5 +88,20 @@ export class CategoryPageComponent implements OnInit {
     this.textTowns = townName;
     sessionStorage.setItem("searchTown", townName);
   }
+
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
+
+  signOut() {
+    this.authService.signOut();
+    this.router.navigate(['/loader']);
+      var that = this;
+      setTimeout(function () {
+          that.router.navigate(['/categorys']);
+      }, 2000);
+  }
+
 }
 

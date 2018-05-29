@@ -23,18 +23,19 @@ export class SiteProfileComponent implements OnInit {
 
   ngOnInit() {
         window.scroll(0,0)
-    var data = sessionStorage.getItem("siteName");
+    var data = sessionStorage.getItem("siteUsername");
     this.usersService.getSite(data).subscribe(usersResponse=>{
        this.currentUser = usersResponse;
+         var data1 = sessionStorage.getItem("siteUsername");
+            this.usersService.getCouponsByUsernameSite(data1).subscribe(usersResponse=>{
+               this.listCoupons = usersResponse;
+              document.getElementById("loader").remove();
+
+            })
+
     })
 
-    var data1 = sessionStorage.getItem("siteUsername");
-    this.usersService.getCouponsByUsernameSite(data1).subscribe(usersResponse=>{
-        console.log(usersResponse);
-       this.listCoupons = usersResponse;
-      document.getElementById("loader").remove();
 
-    })
 
   }
 
