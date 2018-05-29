@@ -5,9 +5,9 @@ import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 import { TownService } from '../../services/town.service';
+import { Town } from '../../models/town';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { AuthService } from '../../common/auth.service';
-import { Town } from '../../models/town';
 
 @Component({
   selector: 'app-category-page',
@@ -54,7 +54,6 @@ export class CategoryPageComponent implements OnInit {
 
      this.townService.getTowns().subscribe(townsResponse=>{
        this.townList = townsResponse;
-        console.log(townsResponse);
       document.getElementById("loader3").remove();
 
     })

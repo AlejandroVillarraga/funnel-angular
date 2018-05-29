@@ -22,3 +22,57 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     background-color: #d1e0e0;
 }
+
+
+
+
+.dropdown {
+    position: center;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+.styleA{
+    background-color: grey;
+    color: white;
+    padding: 8px 15px;
+    text-aling: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.9s;
+        cursor: pointer;
+
+}
+
+.styleA:hover {
+    background-color: white;
+    color: #0e6ebe;
+}
+
+.nav-link{
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.9s;
+        cursor: pointer;
+        color: black;
+}
+
+.nav-link:hover{
+    background-color: #d6d6c2;
+}
